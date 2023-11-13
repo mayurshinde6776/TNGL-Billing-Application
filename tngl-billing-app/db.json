@@ -1,5 +1,11 @@
 {
   "customers": [
-    
+    {
+      "name": "mayur hiraji shinde",
+      "address": "A/P Karve Nagar- 411052, pune, maharashtra, india",
+      "customerNumber": "788",
+      "meterSerialNumber": "wee45",
+      "id": 1
+    }
   ]
 }

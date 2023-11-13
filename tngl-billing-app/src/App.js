@@ -1,10 +1,16 @@
-// Import necessary components from react-router-dom
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import CustomerForm from './Components/data-entry-operator/CustomerForm';
 import CustomerList from './Components/data-entry-operator/CustomerList';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  // Define the onAddCustomer function
+  const onAddCustomer = (newCustomer) => {
+    // Logic to handle adding a new customer
+    console.log('Adding customer:', newCustomer);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -42,10 +48,9 @@ function App() {
         </nav>
 
         <div className="container mt-3">
-          {/* Wrap your Routes in a Routes component */}
           <Routes>
-            {/* Define your routes using the Route component */}
-            <Route path="/customer-form" element={<CustomerForm />} />
+            {/* Pass onAddCustomer as a prop to CustomerForm */}
+            <Route path="/customer-form" element={<CustomerForm onAddCustomer={onAddCustomer} />} />
             <Route path="/customer-list" element={<CustomerList />} />
           </Routes>
         </div>

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const CustomerForm = ({ onAddCustomer }) => {
+  console.log('onAddCustomer:', onAddCustomer);
   const [customerData, setCustomerData] = useState({
     name: '',
     address: '',
@@ -110,7 +112,8 @@ const CustomerForm = ({ onAddCustomer }) => {
     
     </div>
   );
-  
-};
-
-export default CustomerForm;
+      };
+  CustomerForm.propTypes = {
+    onAddCustomer: PropTypes.func.isRequired,
+  };
+  export default CustomerForm;
